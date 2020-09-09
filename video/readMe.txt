@@ -1,0 +1,1 @@
+ici est le stockage de vidéo, ce readme est pour remplir le dossier afin qu'il passe sur Git
