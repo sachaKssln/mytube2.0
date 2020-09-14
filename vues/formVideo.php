@@ -2,7 +2,7 @@
 <h2 class="text-center">
     Upload a video
 </h2>
-    <form action="index.php?uc=video&action=valideForm" method="POST" class="col-md-6 offset-md-3 border border-primary p-3 rounded">
+    <form enctype="multipart/form-data" action="index.php?uc=video&action=valideForm"  method="POST" class="col-md-6 offset-md-3 border border-primary p-3 rounded">
     <div class="form-group">
         <label for="videoName">Video Name</label>
         <input required type="text" placeholder="Insert the video name" name="videoName" id="videoName" class="form-control" value="">

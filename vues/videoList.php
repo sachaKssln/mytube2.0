@@ -11,14 +11,14 @@
           
         <div class="col-md-4">
           <a href="videos/videos/'.$video->getVideoUrl().'">
-            <img src="videos/imgVideos/'.$video->getImageUrl().'" class="img-fluid" alt="Responsive image">
+            <img src="videos/imgVideos/'.$video->getImageUrl().'" class="img-fluid" alt="descriptionImageForTheVideo">
             <p>'.$video->getName().'</p>
           </a>
         </div>
         ';
         if ($number >= $maxVideoPerRow) {
           echo "</div>";
-          $number = 1;
+          $number = 0;
         }
         $number++;
     }

@@ -29,11 +29,12 @@ class Video{
     }
 
     /**
-     * Set the value of url
+     * set l'url de la video
      *
-     * @return  self
-     */ 
-    public function setUrl($url)
+     * @param string $url
+     * @return self
+     */
+    public function setUrl(string $url) : self
     {
         $this->url = $url;
 
@@ -49,11 +50,12 @@ class Video{
     }
 
     /**
-     * Set the value of imgExtension
+     * set l'extension de l'image
      *
-     * @return  self
-     */ 
-    public function setImgExtension($imgExtension)
+     * @param string $imgExtension
+     * @return self
+     */
+    public function setImgExtension(string $imgExtension)
     {
         $this->imgExtension = $imgExtension;
 
@@ -69,10 +71,11 @@ class Video{
     }
 
     /**
-     * Set the value of videoExtension
+     * set la string de l'extension
      *
-     * @return  self
-     */ 
+     * @param string $videoExtension
+     * @return self
+     */
     public function setVideoExtension($videoExtension)
     {
         $this->videoExtension = $videoExtension;
@@ -89,7 +92,7 @@ class Video{
     }
 
     /**
-     * Set the value of name
+     * Set le nom de la video
      *
      * @return  self
      */ 
@@ -112,19 +115,30 @@ class Video{
         return $value;
     }
 //--------------------------------------------------------------------
-    public function add(Video $video){
-        $req=MonPdo::getInstance()->prepare("insert into videos(url, name, imgExtension, videoExtension) values(':url', ':name', ':imgExtension', ':videoExtensions')");
+
+    /**
+     * Fonction pour ajouter une video
+     *
+     * @param Video $video video a ajouter
+     * @return integer resultat (1 si l'opération a réussi, 0 sinon)
+     */
+    public static function add(Video $video) :int
+    {
+        $req=MonPdo::getInstance()->prepare("insert into videos(url, name, imgExtension, videoExtension) values(:url, :name, :imgExtension, :videoExtension)");
         $url=$video->getUrl();
         $req->bindParam(':url', $url);
+
         $name=$video->getName();
         $req->bindParam(':name', $name);
+
         $imgExtension=$video->getImgExtension();
         $req->bindParam(':imgExtension', $imgExtension);
+
         $videoExtension = $video->getVideoExtension();
         $req->bindParam(':videoExtension', $videoExtension);
         $nb=$req->execute();
         return $nb;
     }
-
+}
 
 ?>

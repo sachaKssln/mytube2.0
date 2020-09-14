@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 include 'vues/header.php';
-//include 'vues/navbar.php';
+include 'vues/navbar.php';
 include 'modeles/monPdo.php';
 include 'modeles/Video.php';
 
@@ -13,7 +13,6 @@ switch ($uc) {
     case 'video':
         include('controllers/videoController.php');
     break;
-
 }
 include 'vues/footer.php';
 ?>
