@@ -1,28 +1,29 @@
 <div class="mainContainer">
-<div class="row">
+
     <?php
-        foreach ($lesVideos as $video) {
-            echo '
-            
-            <div class="col-md-4">
-                <a href="videos/videos/'.$video->getVideoUrl().'">
-                <img src="videos/imgVideos/'.$video->getVideoImageUrl().'" class="img-fluid" alt="Responsive image">
-                <p>Swain BeatBox</p>
-            </a>
-              </div>
-            
-            ';
+    $number = 1;
+    $maxVideoPerRow = 3;
+      foreach ($lesVideos as $video) {
+        if ($number == 1) {
+          echo '<div class="row">';
         }
+        echo '
+          
+        <div class="col-md-4">
+          <a href="videos/videos/'.$video->getVideoUrl().'">
+            <img src="videos/imgVideos/'.$video->getImageUrl().'" class="img-fluid" alt="Responsive image">
+            <p>'.$video->getName().'</p>
+          </a>
+        </div>
+        ';
+        if ($number >= $maxVideoPerRow) {
+          echo "</div>";
+          $number = 1;
+        }
+        $number++;
+    }
+    if ($number < $maxVideoPerRow) {
+      echo "</div>";
+    }
     ?>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-    </div>
 </div>
