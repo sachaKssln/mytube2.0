@@ -6,7 +6,7 @@ Desc: Ce fichier est un index permettant d'afficher toute les pages à partir d'
 */
 session_start(); 
 include 'vues/header.php';
-include 'vues/navbar.php';
+//include 'vues/navbar.php';
 include 'modeles/monPdo.php';
 include 'modeles/Video.php';
 

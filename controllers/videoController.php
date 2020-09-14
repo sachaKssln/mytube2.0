@@ -63,6 +63,12 @@ switch ($action) {
                     $nb=Video::add($video);
                     header('location: index.php?uc=video&action=list');
                 }
+                else {
+                    echo "Code Erreur 2.2";
+                }
+            }
+            else {
+                echo "Code Erreur 2.1";
             }
         }
         else {
