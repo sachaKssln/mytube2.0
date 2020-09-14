@@ -1,5 +1,6 @@
 <?php
 /**
+ * code par Rolland Stéphane
 *	Classe d'acces aux donnees Utilise les services de la classe PDO
 *	Les attributs sont tous statiques, les 4 premiers pour la connexion
 *	$monPdo qui contiendra l'unique instance de la classe

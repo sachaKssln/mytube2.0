@@ -1,4 +1,9 @@
 <?php
+/*
+Projet: Mytube
+Auteur: Kissling Sacha
+Desc: Ce fichier est un objet servant pour la gestion de video
+*/
 class Video{
     private $url;
 
