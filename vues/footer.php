@@ -1,5 +1,6 @@
 </main>
-<footer class="container">
+<footer class="container" style="
+float:left;">
   <p>&copy; Kissling Sacha 2020</p>
 </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
